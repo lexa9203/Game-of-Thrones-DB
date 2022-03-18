@@ -1,0 +1,13 @@
+.list-group {
+    cursor: pointer;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+.list-group-item{
+    display: flex;
+    align-items: flex-end;
+    border-bottom:  1px solid black;
+    height: 35px;
+    padding-bottom: 3px;
+}

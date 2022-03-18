@@ -1,0 +1,17 @@
+.char-details-wrapper {
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.char-details h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.select-error {
+    color: #fff;
+    text-align: center;
+    font-size: 26px;
+}

@@ -1,0 +1,22 @@
+.random-block {
+    min-width: 500px;
+    background-color: #fff;
+    padding: 25px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+.random-block h4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.term {
+    font-weight: bold;
+}
+.list-group-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom:  1px solid black;
+    height: 35px;
+    padding-bottom: 3px;
+}
