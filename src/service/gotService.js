@@ -13,27 +13,27 @@ export default class GotService{
         return await res.json();
     }
 
-    getAllCharachters() {
-        return this.getResourse("/characters");
+    getAllCharacters = () => {
+        return this.getResourse("/characters?page=5&pageSize=10");
     }
 
-    getCharachter(id) {
+    getCharacter = (id) => {
         return this.getResourse(`/characters/${id}`);
     }
 
-    getAllBooks() {
+    getAllBooks = () => {
         return this.getResourse("/books");
     }
 
-    getBook(id) {
+    getBook = (id) => {
         return this.getResourse(`/books/${id}`);
     }
 
-    getAllHouses() {
+    getAllHouses = () =>  {
         return this.getResourse("/houses");
     }
 
-    getHouse(id) {
+    getHouse = (id) => {
         return this.getResourse(`/houses/${id}`);
     }
 }

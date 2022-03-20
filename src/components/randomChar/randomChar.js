@@ -7,10 +7,10 @@ export default class RandomChar extends Component {
 
     constructor() {
         super();
-        this.updateChar();
+        this.updateChar = this.updateChar.bind(this)
     }
 
-    gotService = new GotService()
+    gotService = new GotService();
 
     state = {
         name: null,
@@ -18,8 +18,16 @@ export default class RandomChar extends Component {
         born: null,
         died: null,
         culture: null,
-
         error: false
+    }
+    
+    componentDidMount() {
+        this.updateChar();
+        this.timer = setInterval(this.updateChar, 10000)
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
     }
 
     onError = (err) => {
@@ -30,7 +38,8 @@ export default class RandomChar extends Component {
 
     updateChar() {
         const id = Math.floor(Math.random()*240+1); // от 1 до 240
-        this.gotService.getCharachter(id).then(char => {
+        this.gotService.getCharacter(id)
+            .then(char => {
                 this.setState({
                     name: char.name || "нет данных",
                     gender: char.gender || "нет данных",
@@ -46,7 +55,7 @@ export default class RandomChar extends Component {
         const {name, gender, born, died, culture, error} = this.state;
         // подключение изображений из public папки
         // const loadImg = <img width={25} src="./img/1495.gif"/>;  
-        const loadImg = <img width={25} src={process.env.PUBLIC_URL + "/img/1495.gif"}/>;
+        const loadImg = <img alt="loading" width={25} src={process.env.PUBLIC_URL + "/img/1495.gif"}/>;
 
         if (error) {
             return (
