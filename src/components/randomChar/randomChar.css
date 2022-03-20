@@ -11,6 +11,7 @@
 }
 .term {
     font-weight: bold;
+    padding-right: 25px;
 }
 .list-group-item{
     display: flex;
